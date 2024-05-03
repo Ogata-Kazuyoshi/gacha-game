@@ -16,7 +16,7 @@ export default defineConfig({
   plugins: [react(),
     VitePWA({
       strategies:'generateSW',
-      registerType: 'prompt',
+      registerType: 'autoUpdate',
       devOptions: {
         enabled: true
       },

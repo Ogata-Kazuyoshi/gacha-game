@@ -7,8 +7,28 @@ import {Home} from "./pages/Home.tsx";
 
 vi.mock("./pages/AppCommon.tsx")
 vi.mock("./pages/Home.tsx")
+// vi.mock("react-router-dom", ()=>{
+//     const actual =  vi.importActual("react-router-dom")
+//     return {
+//         ... (actual),
+//         useNavigate: vi.fn()
+//     }
+// })
+
+
 
 describe('App.tesxのテスト',()=>{
+    // describe("レンダーした時",()=>{
+    //     test("/にアクセスするとnavigateに正しい引数を渡して呼ぶ",()=>{
+    //         const spyNavigate = vi.fn()
+    //         vi.mocked(useNavigate).mockReturnValue(spyNavigate)
+    //
+    //         render(<App/>)
+    //
+    //         expect(useNavigate).toHaveBeenCalled()
+    //         expect(spyNavigate).toHaveBeenCalledWith("/app/home")
+    //     })
+    // })
     describe("routerに関して",()=>{
         test('/appにアクセスするとAppcommonコンポーネントが呼ばれる',()=>{
             AppRender("/app")
