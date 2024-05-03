@@ -1,0 +1,21 @@
+.bottomNavContainer{
+  display: flex;
+  width: 100vw;
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d3d3d3;
+  svg {
+    font-size: 6rem;
+  }
+  > :nth-child(1) {
+  margin-left: 100px;
+  }
+> :nth-child(3) {
+  margin-right: 100px;
+}
+
+}

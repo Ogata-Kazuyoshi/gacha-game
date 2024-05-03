@@ -4,9 +4,13 @@ import {BrowserRouter, Outlet} from "react-router-dom";
 import {vi} from "vitest";
 import {AppCommon} from "./pages/AppCommon.tsx";
 import {Home} from "./pages/Home.tsx";
+import {Album} from "./pages/Album.tsx";
+import {Setting} from "./pages/Setting.tsx";
 
 vi.mock("./pages/AppCommon.tsx")
 vi.mock("./pages/Home.tsx")
+vi.mock("./pages/Album.tsx")
+vi.mock("./pages/Setting.tsx")
 // vi.mock("react-router-dom", ()=>{
 //     const actual =  vi.importActual("react-router-dom")
 //     return {
@@ -29,6 +33,9 @@ describe('App.tesxのテスト',()=>{
     //         expect(spyNavigate).toHaveBeenCalledWith("/app/home")
     //     })
     // })
+    afterEach(()=>{
+        vi.restoreAllMocks()
+    })
     describe("routerに関して",()=>{
         test('/appにアクセスするとAppcommonコンポーネントが呼ばれる',()=>{
             AppRender("/app")
@@ -41,6 +48,20 @@ describe('App.tesxのテスト',()=>{
             AppRender("/app/home")
 
             expect(Home).toHaveBeenCalled()
+        })
+        test("/app/albumにアクセスするとAlbumコンポーネントが呼ばれる",()=>{
+            vi.mocked(AppCommon).mockReturnValue(<Outlet />)
+
+            AppRender("/app/album")
+
+            expect(Album).toHaveBeenCalled()
+        })
+        test("/app/settingにアクセスするとAlbumコンポーネントが呼ばれる",()=>{
+            vi.mocked(AppCommon).mockReturnValue(<Outlet />)
+
+            AppRender("/app/setting")
+
+            expect(Setting).toHaveBeenCalled()
         })
 
     })

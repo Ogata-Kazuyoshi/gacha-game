@@ -22,7 +22,8 @@
     "react-router-dom": "^6.23.0",
     "styled-components": "^6.1.9",
     "use-sound": "^4.0.1",
-    "vite-plugin-pwa": "^0.17.4"
+    "vite-plugin-pwa": "^0.17.4",
+    "sass": "^1.68.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^9.3.3",
