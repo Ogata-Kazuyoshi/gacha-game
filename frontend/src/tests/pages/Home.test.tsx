@@ -30,7 +30,7 @@ describe("Homeのテスト", () => {
         test("正しい要素が表示されている", () => {
             render(<Home/>)
 
-            expect(screen.getByAltText("gachaBody")).toHaveAttribute("src","/src/assets/images/common/gachaBody.png")
+            expect(screen.getByAltText("gachaBody")).toHaveAttribute("src","/public/assets/images/common/gachaBody.png")
 
             expect(Button).toHaveBeenCalledWith(expect.objectContaining({
                     variant: "contained",
@@ -44,7 +44,7 @@ describe("Homeのテスト", () => {
             render(<Home/>);
 
             // useSoundが呼び出されたときの引数を検証
-            expect(vi.mocked(useSound).mock.calls[0][0]).toBe("/src/assets/sound/gatyagatya.mp3");
+            expect(vi.mocked(useSound).mock.calls[0][0]).toBe("/public/assets/sound/gatyagatya.mp3");
         });
 
         test("Button要素のOnClickプロパティに設定されている関数を実行すると、useSoundのplayを呼ぶ", async () => {

@@ -1,10 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import useSound from "use-sound";
-import Sound from "../assets/sound/gatyagatya.mp3"
+import Sound from "../../public/assets/sound/gatyagatya.mp3"
 import data from "../data/data.json"
 import Button from "@mui/material/Button";
-import gachaBody from "../assets/images/common/gachaBody.png"
+import gachaBody from "../../public/assets/images/common/gachaBody.png"
 import {useState} from "react";
 
 export const Home = () => {
@@ -23,18 +23,20 @@ export const Home = () => {
             }
         }
         window.localStorage.setItem(`gachaList-${data.dataList[firstIndex].titleNumber}`,nextData)
-        setImgSrc(data.dataList[firstIndex].items[secondIndex].src)
+        setTitleIndex(firstIndex)
+        setItemIndex(secondIndex)
     }
 
     const [play] = useSound(Sound, {
         onend: gacha
     });
-    const [imgSrc,setImgSrc] = useState("")
-
+    const [titleIndex, setTitleIndex]= useState<number | null>(null)
+    const [itemIndex, setItemIndex]= useState<number | null>(null)
 
     return (
         <>
-            <img src={`/src/${imgSrc}`} alt="#"/>
+            {(titleIndex !==null && itemIndex !==null) && <img src={`${data.dataList[titleIndex].items[itemIndex].src}`} alt="#"/>}
+
             <img src={gachaBody} alt="gachaBody"/>
             <Button
                 variant="contained"

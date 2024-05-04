@@ -7,17 +7,17 @@
         {
           "itemNumber": 1,
           "name": "チェイス",
-          "src": "assets/images/pawpatrol/pawpatrol-chace.png"
+          "src": "/assets/images/pawpatrol/pawpatrol-chace.png"
         },
         {
           "itemNumber": 2,
           "name": "ラブル",
-          "src": "assets/images/pawpatrol/pawpatrol-raburu.png"
+          "src": "/assets/images/pawpatrol/pawpatrol-raburu.png"
         },
         {
           "itemNumber": 3,
           "name": "スカイ",
-          "src": "assets/images/pawpatrol/pawpatrol-sky.png"
+          "src": "/assets/images/pawpatrol/pawpatrol-sky.png"
         }
       ]
     },
@@ -28,12 +28,12 @@
         {
           "itemNumber": 1,
           "name": "トーマス",
-          "src": "assets/images/tomas/tomas-tomas.png"
+          "src": "/assets/images/tomas/tomas-tomas.png"
         },
         {
           "itemNumber": 2,
           "name": "パーシー",
-          "src": "assets/images/tomas/tomas-parcie.png"
+          "src": "/assets/images/tomas/tomas-parcie.png"
         }
       ]
     }
