@@ -1,3 +1,4 @@
+import styles from "./Home.module.scss"
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import useSound from "use-sound";
@@ -17,7 +18,11 @@ export const Home = () => {
         if (currentData) {
             const splitData = currentData.split("-")
             if (!splitData.includes(nextData)) {
-                nextData = `${currentData}-${nextData}`
+                const tempData = [...splitData]
+                tempData.push(nextData)
+                tempData.sort()
+                nextData = tempData.join("-")
+                // nextData = `${currentData}-${nextData}`
             } else {
                 nextData = currentData
             }
@@ -25,6 +30,7 @@ export const Home = () => {
         window.localStorage.setItem(`gachaList-${data.dataList[firstIndex].titleNumber}`,nextData)
         setTitleIndex(firstIndex)
         setItemIndex(secondIndex)
+        setIsPopUp(true)
     }
 
     const [play] = useSound(Sound, {
@@ -32,21 +38,34 @@ export const Home = () => {
     });
     const [titleIndex, setTitleIndex]= useState<number | null>(null)
     const [itemIndex, setItemIndex]= useState<number | null>(null)
+    const [isPopUp, setIsPopUp] = useState(false)
 
     return (
         <>
-            {(titleIndex !==null && itemIndex !==null) && <img src={`${data.dataList[titleIndex].items[itemIndex].src}`} alt="#"/>}
+            <div className={styles.homeContainer}>
+                <img src={gachaBody} alt="gachaBody"/>
+                <Button
+                    variant="contained"
+                    color="success"
+                    onClick={() => {
+                        play()
+                    }}
+                >
+                    Push
+                </Button>
 
-            <img src={gachaBody} alt="gachaBody"/>
-            <Button
-                variant="contained"
-                color="success"
-                onClick={() => {
-                    play()
-                }}
-            >
-                Push
-            </Button>
+            </div>
+
+
+            {(isPopUp && titleIndex !==null && itemIndex !==null) && (
+                <div>
+                    <div>{`${data.dataList[titleIndex].title}`}</div>
+                    <div>
+                        <img src={data.dataList[titleIndex].items[itemIndex].src} alt="#"/>
+                    </div>
+                    <div>{`${data.dataList[titleIndex].items[itemIndex].name}`}</div>
+                </div>
+            )}
         </>
     );
 }
