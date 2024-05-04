@@ -1,0 +1,41 @@
+{
+  "dataList": [
+    {
+      "title": "パウパトロール",
+      "titleNumber" : 1,
+      "items": [
+        {
+          "itemNumber": 1,
+          "name": "チェイス",
+          "src": "assets/images/pawpatrol/pawpatrol-chace.png"
+        },
+        {
+          "itemNumber": 2,
+          "name": "ラブル",
+          "src": "assets/images/pawpatrol/pawpatrol-raburu.png"
+        },
+        {
+          "itemNumber": 3,
+          "name": "スカイ",
+          "src": "assets/images/pawpatrol/pawpatrol-sky.png"
+        }
+      ]
+    },
+    {
+      "title": "トーマス",
+      "titleNumber" : 2,
+      "items": [
+        {
+          "itemNumber": 1,
+          "name": "トーマス",
+          "src": "assets/images/tomas/tomas-tomas.png"
+        },
+        {
+          "itemNumber": 2,
+          "name": "パーシー",
+          "src": "assets/images/tomas/tomas-parcie.png"
+        }
+      ]
+    }
+  ]
+}
