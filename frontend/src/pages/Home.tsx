@@ -7,6 +7,7 @@ import data from "../data/data.json"
 import Button from "@mui/material/Button";
 import gachaBody from "../../public/assets/images/common/gachaBody.png"
 import {useState} from "react";
+import {PopUp} from "../components/PopUp.tsx";
 
 export const Home = () => {
     // const [play, { stop, pause }] = useSound(Sound);
@@ -55,16 +56,8 @@ export const Home = () => {
                 </Button>
 
             </div>
-
-
             {(isPopUp && titleIndex !==null && itemIndex !==null) && (
-                <div>
-                    <div>{`${data.dataList[titleIndex].title}`}</div>
-                    <div>
-                        <img src={data.dataList[titleIndex].items[itemIndex].src} alt="#"/>
-                    </div>
-                    <div>{`${data.dataList[titleIndex].items[itemIndex].name}`}</div>
-                </div>
+                <PopUp titleIndex={titleIndex} itemIndex={itemIndex} setIsPopup={setIsPopUp}/>
             )}
         </>
     );

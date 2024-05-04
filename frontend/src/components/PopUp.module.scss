@@ -1,0 +1,60 @@
+.popUpContainer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  > :first-child{
+    margin: 24px 40px;
+    font-size: 100px;
+  }
+  > :last-child {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    > div {
+      margin: 40px 0;
+      font-feature-settings: 'pwid' on;
+      font-family: "Hiragino Kaku Gothic Pro", serif;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 125%;
+      letter-spacing: 1.5px;
+      > img {
+        height: 450px;
+      }
+    }
+    > :first-child {
+      font-size: 40px;
+    }
+
+    > :last-child {
+      font-size: 80px;
+      text-decoration: underline;
+    }
+  }
+}
+
+.slideInFromBottom {
+  animation: slideInFromBottom 0.5s forwards;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    //transform: translateY(100vh) rotateY(0deg);
+    transform: translateY(100vh);
+  }
+  100% {
+    //transform: translateY(0) rotateY(360deg);
+    transform: translateY(0);
+  }
+}
