@@ -36,6 +36,32 @@
           "src": "/assets/images/tomas/tomas-parcie.png"
         }
       ]
+    },
+    {
+      "title": "はたらくくるま",
+      "titleNumber" : 3,
+      "items": [
+        {
+          "itemNumber": 1,
+          "name": "あんびゅらんす",
+          "src": "/assets/images/vehicle/vehicle-ambulance.png"
+        },
+        {
+          "itemNumber": 2,
+          "name": "ぶるどーざー",
+          "src": "/assets/images/vehicle/vehicle-bulldozer.png"
+        },
+        {
+          "itemNumber": 3,
+          "name": "がーべーっじとらっく",
+          "src": "/assets/images/vehicle/vehicle-gabagetruck.png"
+        },
+        {
+          "itemNumber": 4,
+          "name": "ぽりすかー",
+          "src": "/assets/images/vehicle/vehicle-policecar.png"
+        }
+      ]
     }
   ]
 }
