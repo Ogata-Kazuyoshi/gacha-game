@@ -1,9 +1,6 @@
 import {vi} from "vitest";
-import {render,screen} from "@testing-library/react";
-import {Home} from "../../pages/Home.tsx";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import useSound from "use-sound";
+// import useSound from "use-sound";
 
 vi.mock("@mui/material/Button", () => {
     return {default: vi.fn(({onClick,children}) => {
