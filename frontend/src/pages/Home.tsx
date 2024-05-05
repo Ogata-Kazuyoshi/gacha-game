@@ -8,6 +8,7 @@ import gachaBody from '../../public/assets/images/common/gachaBody.png';
 import gachaHandole from '../../public/assets/images/common/gachaHandle.png';
 import { useState } from 'react';
 import { PopUp } from '../components/PopUp.tsx';
+import {TouchDown} from "../components/TouchDown.tsx";
 
 export const Home = () => {
   // const [play, { stop, pause }] = useSound(Sound);
@@ -49,8 +50,8 @@ export const Home = () => {
   const [isPopUp, setIsPopUp] = useState(false);
   const [rotate, setRotate] = useState(false);
 
-  const handleButtonClick = () => {
-      console.log("daown")
+  const handleButtonClick = (event: React.TouchEvent<HTMLImageElement>) => {
+    event.preventDefault()
     play();
     setRotate(true);
     setTimeout(() => setRotate(false), 1000); // アニメーションが終わったら状態をリセット
@@ -60,21 +61,13 @@ export const Home = () => {
     <>
       <div className={styles.homeContainer}>
         <img src={gachaBody} alt="gachaBody" />
-          <div
-              onTouchStart={()=>{
-                      handleButtonClick()
-              }}
-              // onClick={() => {
-              // handleButtonClick();
-              // }}
-          >
-            <img
-              src={gachaHandole}
-              alt="gachaHandle"
-              className={rotate ? styles.rotateAnimation : ''}
-
-            />
-          </div>
+          <TouchDown callBackFunc={handleButtonClick}>
+                <img
+                  src={gachaHandole}
+                  alt="gachaHandle"
+                  className={rotate ? styles.rotateAnimation : ''}
+                />
+          </TouchDown>
       </div>
       {isPopUp && titleIndex !== null && itemIndex !== null && (
         <PopUp
