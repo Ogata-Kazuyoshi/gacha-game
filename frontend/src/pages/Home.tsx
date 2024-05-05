@@ -50,8 +50,7 @@ export const Home = () => {
   const [isPopUp, setIsPopUp] = useState(false);
   const [rotate, setRotate] = useState(false);
 
-  const handleButtonClick = (event: React.TouchEvent<HTMLImageElement>) => {
-    event.preventDefault()
+  const handleButtonClick = () => {
     play();
     setRotate(true);
     setTimeout(() => setRotate(false), 1000); // アニメーションが終わったら状態をリセット
