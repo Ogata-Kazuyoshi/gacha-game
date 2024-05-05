@@ -10,8 +10,10 @@
   flex-direction: column;
 
   > :first-child{
-    margin: 24px 40px;
-    font-size: 100px;
+    > :first-child {
+      margin: 24px 40px;
+      font-size: 100px;
+    }
   }
   > :last-child {
     height: 100%;
