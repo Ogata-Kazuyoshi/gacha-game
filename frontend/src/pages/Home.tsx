@@ -50,6 +50,7 @@ export const Home = () => {
   const [rotate, setRotate] = useState(false);
 
   const handleButtonClick = () => {
+      console.log("daown")
     play();
     setRotate(true);
     setTimeout(() => setRotate(false), 1000); // アニメーションが終わったら状態をリセット
@@ -59,9 +60,14 @@ export const Home = () => {
     <>
       <div className={styles.homeContainer}>
         <img src={gachaBody} alt="gachaBody" />
-          <div onClick={() => {
-              handleButtonClick();
-          }}>
+          <div
+              onTouchStart={()=>{
+                      handleButtonClick()
+              }}
+              // onClick={() => {
+              // handleButtonClick();
+              // }}
+          >
             <img
               src={gachaHandole}
               alt="gachaHandle"
