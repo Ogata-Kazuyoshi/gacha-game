@@ -60,14 +60,17 @@ export const Home = () => {
   return (
     <>
       <div className={styles.homeContainer}>
-        <img src={gachaBody} alt="gachaBody" />
-          <TouchDown callBackFunc={handleButtonClick}>
-                <img
-                  src={gachaHandole}
-                  alt="gachaHandle"
-                  className={rotate ? styles.rotateAnimation : ''}
-                />
-          </TouchDown>
+        <div>
+          <img src={gachaBody} alt="gachaBody" />
+            <TouchDown callBackFunc={handleButtonClick}>
+                  <img
+                    src={gachaHandole}
+                    alt="gachaHandle"
+                    className={rotate ? styles.rotateAnimation : ''}
+                  />
+            </TouchDown>
+
+        </div>
       </div>
       {isPopUp && titleIndex !== null && itemIndex !== null && (
         <PopUp
