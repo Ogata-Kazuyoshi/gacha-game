@@ -5,6 +5,7 @@ import {Home} from "./pages/Home.tsx";
 import {useEffect} from "react";
 import {Album} from "./pages/Album.tsx";
 import {Setting} from "./pages/Setting.tsx";
+import {ItemList} from "./pages/ItemList.tsx";
 
 function App() {
     const navigate = useNavigate()
@@ -22,6 +23,7 @@ function App() {
               <Route path="home" element={<Home/>}/>
               <Route path="album" element={<Album/>}/>
               <Route path="setting" element={<Setting/>}/>
+              <Route path="itemList" element={<ItemList/>}/>
           </Route>
       </Routes>
     </>

@@ -6,17 +6,26 @@ import Sound from '../../public/assets/sound/gatyagatya.mp3';
 import data from '../data/data.json';
 import gachaBody from '../../public/assets/images/common/gachaBody.png';
 import gachaHandole from '../../public/assets/images/common/gachaHandle.png';
-import { useState } from 'react';
+import {useContext, useState} from 'react';
 import { PopUp } from '../components/PopUp.tsx';
 import {TouchDown} from "../components/TouchDown.tsx";
+import {ApplicationContext} from "../contexts/ApplicationContextProvider.tsx";
 
 export const Home = () => {
-  // const [play, { stop, pause }] = useSound(Sound);
+
+  const {selectData} = useContext(ApplicationContext)!
   const gacha = () => {
-    const firstIndex = Math.floor(Math.random() * data.dataList.length);
-    const secondIndex = Math.floor(
-      Math.random() * data.dataList[firstIndex].items.length
-    );
+    let firstIndex:number
+    let secondIndex:number
+    if (selectData[0] !== null && selectData[1] !==null ) {
+      firstIndex = selectData[0]
+      secondIndex = selectData[1]
+    } else {
+      firstIndex = Math.floor(Math.random() * data.dataList.length);
+      secondIndex = Math.floor(
+          Math.random() * data.dataList[firstIndex].items.length
+      );
+    }
     const currentData = window.localStorage.getItem(
       `gachaList-${data.dataList[firstIndex].titleNumber}`
     );
@@ -42,6 +51,7 @@ export const Home = () => {
     setIsPopUp(true);
   };
 
+  // const [play, { stop, pause }] = useSound(Sound);
   const [play] = useSound(Sound, {
     onend: gacha,
   });
