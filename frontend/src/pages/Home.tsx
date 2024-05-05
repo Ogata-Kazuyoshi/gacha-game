@@ -59,14 +59,14 @@ export const Home = () => {
     <>
       <div className={styles.homeContainer}>
         <img src={gachaBody} alt="gachaBody" />
-          <div>
+          <div onClick={() => {
+              handleButtonClick();
+          }}>
             <img
               src={gachaHandole}
               alt="gachaHandle"
               className={rotate ? styles.rotateAnimation : ''}
-              onClick={() => {
-                handleButtonClick();
-              }}
+
             />
           </div>
       </div>
