@@ -7,9 +7,20 @@
   align-items: center;
   justify-content: space-between;
 
-  > img {
+  > :first-child {
     margin-top: 20px;
-    height: 600px;
+    height: 800px;
+  }
+
+  > :nth-child(2){
+    height: 140px;
+    position: absolute;
+    top: 517px;
+    left:355px;
+
+    > img {
+      height: 100%;
+    }
   }
 
   > :last-child {
@@ -17,4 +28,17 @@
     border-radius: 20px;
     margin-bottom: 20px;
   }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotateAnimation {
+  animation: rotate 1s linear;
 }
