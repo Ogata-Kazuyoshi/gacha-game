@@ -72,8 +72,22 @@
      flex-direction: column;
      align-items: center;
      justify-content: center;
-     > img {
-       width:400px;
+     > div {
+       background-color: rgba(29, 183, 255, 0.594);
+       position: absolute;
+       top: 190px;
+       width: 420px;
+       height: 470px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       //overflow: hidden; // はみ出た部分を切り取る
+
+       > img {
+         height:100%;
+         width: 100%;
+         object-fit: contain;
+       }
      }
    }
     > :nth-child(3) {

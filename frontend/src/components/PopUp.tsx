@@ -30,7 +30,9 @@ export const PopUp:React.FC<Props> = (props) => {
             }}>
                 <div>{`${data.dataList[props.titleIndex].title}`}</div>
                 <div>
-                    <img src={data.dataList[props.titleIndex].items[props.itemIndex].src} alt="#"/>
+                    <div>
+                        <img src={data.dataList[props.titleIndex].items[props.itemIndex].src} alt="#"/>
+                    </div>
                 </div>
                 <div>{`${data.dataList[props.titleIndex].items[props.itemIndex].name}`}</div>
             </SwipeEvent>
