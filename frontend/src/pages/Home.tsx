@@ -59,12 +59,20 @@ export const Home = () => {
   const [itemIndex, setItemIndex] = useState<number | null>(null);
   const [isPopUp, setIsPopUp] = useState(false);
   const [rotate, setRotate] = useState(false);
+  const [isPlay, setIsPlay] = useState(false)
 
   const handleButtonClick = () => {
+    if (isPlay) return
+    setIsPlay(true)
     play();
     setRotate(true);
     setTimeout(() => setRotate(false), 1000); // アニメーションが終わったら状態をリセット
   };
+
+  const backToHome = () => {
+    setIsPopUp(false)
+    setIsPlay(false)
+  }
 
   return (
     <>
@@ -85,7 +93,7 @@ export const Home = () => {
         <PopUp
           titleIndex={titleIndex}
           itemIndex={itemIndex}
-          setIsPopup={setIsPopUp}
+          callBackFunc={backToHome}
         />
       )}
     </>

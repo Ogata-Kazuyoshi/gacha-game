@@ -9,7 +9,7 @@ import card from "../../public/assets/images/common/card-template.png"
 type Props = {
     titleIndex:number,
     itemIndex:number,
-    setIsPopup:(isPopup:boolean)=>void
+    callBackFunc:()=>void
 }
 
 export const PopUp:React.FC<Props> = (props) => {
@@ -17,7 +17,7 @@ export const PopUp:React.FC<Props> = (props) => {
 
     return <div className={`${styles.popUpContainer} ${styles.slideInFromBottom}`}>
         <TouchDown callBackFunc={() => {
-            props.setIsPopup(false)
+            props.callBackFunc()
         }}>
             <ArrowBackIosIcon/>
         </TouchDown>
@@ -26,7 +26,7 @@ export const PopUp:React.FC<Props> = (props) => {
                 <img src={card} alt="cardTemplate"/>
             </div>
             <SwipeEvent callBackFunc={() => {
-                props.setIsPopup(false)
+                props.callBackFunc()
             }}>
                 <div>{`${data.dataList[props.titleIndex].title}`}</div>
                 <div>
