@@ -15,33 +15,83 @@
       font-size: 100px;
     }
   }
-  > :last-child {
-    height: 100%;
-    width: 100%;
+
+}
+
+.cardContainer {
+  position: relative;
+  height: 850px;
+
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 850px;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    > img {
+      height: 100%;
+    }
+  }
 
-    > div {
-      margin: 40px 0;
+
+
+  > :nth-child(2) {
+    > :first-child {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100vw;
+      height: 850px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: end;
+      font-size: 24px;
       font-feature-settings: 'pwid' on;
       font-family: "Hiragino Kaku Gothic Pro", serif;
       font-style: normal;
       font-weight: bold;
       line-height: 125%;
       letter-spacing: 1.5px;
-      > img {
-        height: 450px;
-      }
-    }
-    > :first-child {
-      font-size: 40px;
+      box-sizing: border-box;
+      padding-bottom: 100px;
     }
 
-    > :last-child {
-      font-size: 80px;
-      text-decoration: underline;
+   > :nth-child(2) {
+     position: absolute;
+     top: 0;
+     left: 0;
+     //background-color:  rgba(255, 29, 29, 0.594);
+     width: 100vw;
+     height: 850px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     > img {
+       width:400px;
+     }
+   }
+    > :nth-child(3) {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100vw;
+      height: 850px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 32px;
+      font-feature-settings: 'pwid' on;
+      font-family: "Hiragino Kaku Gothic Pro", serif;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 125%;
+      letter-spacing: 1.5px;
     }
   }
 }
