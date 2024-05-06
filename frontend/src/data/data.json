@@ -18,6 +18,21 @@
           "itemNumber": 3,
           "name": "スカイ",
           "src": "/assets/images/pawpatrol/pawpatrol-sky.png"
+        },
+        {
+          "itemNumber": 4,
+          "name": "エベレスト",
+          "src": "/assets/images/pawpatrol/pawpatrol-evelest.png"
+        },
+        {
+          "itemNumber": 5,
+          "name": "ロッキー",
+          "src": "/assets/images/pawpatrol/pawpatrol-rockey.png"
+        },
+        {
+          "itemNumber": 6,
+          "name": "ケント",
+          "src": "/assets/images/pawpatrol/pawpatrol-kento.png"
         }
       ]
     },
