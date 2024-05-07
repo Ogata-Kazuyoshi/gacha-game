@@ -7,32 +7,38 @@
         {
           "itemNumber": 1,
           "name": "チェイス",
-          "src": "/assets/images/pawpatrol/pawpatrol-chace.png"
+          "src": "/assets/images/pawpatrol/pawpatrol-chace.png",
+          "isGet": false
         },
         {
           "itemNumber": 2,
           "name": "ラブル",
-          "src": "/assets/images/pawpatrol/pawpatrol-raburu.png"
+          "src": "/assets/images/pawpatrol/pawpatrol-raburu.png",
+          "isGet": false
         },
         {
           "itemNumber": 3,
           "name": "スカイ",
-          "src": "/assets/images/pawpatrol/pawpatrol-sky.png"
+          "src": "/assets/images/pawpatrol/pawpatrol-sky.png",
+          "isGet": false
         },
         {
           "itemNumber": 4,
           "name": "エベレスト",
-          "src": "/assets/images/pawpatrol/pawpatrol-evelest.png"
+          "src": "/assets/images/pawpatrol/pawpatrol-evelest.png",
+          "isGet": false
         },
         {
           "itemNumber": 5,
           "name": "ロッキー",
-          "src": "/assets/images/pawpatrol/pawpatrol-rockey.png"
+          "src": "/assets/images/pawpatrol/pawpatrol-rockey.png",
+          "isGet": false
         },
         {
           "itemNumber": 6,
           "name": "ケント",
-          "src": "/assets/images/pawpatrol/pawpatrol-kento.png"
+          "src": "/assets/images/pawpatrol/pawpatrol-kento.png",
+          "isGet": false
         }
       ]
     },
@@ -43,12 +49,14 @@
         {
           "itemNumber": 1,
           "name": "トーマス",
-          "src": "/assets/images/tomas/tomas-tomas.png"
+          "src": "/assets/images/tomas/tomas-tomas.png",
+          "isGet": false
         },
         {
           "itemNumber": 2,
           "name": "パーシー",
-          "src": "/assets/images/tomas/tomas-parcie.png"
+          "src": "/assets/images/tomas/tomas-parcie.png",
+          "isGet": false
         }
       ]
     },
@@ -59,22 +67,26 @@
         {
           "itemNumber": 1,
           "name": "あんびゅらんす",
-          "src": "/assets/images/vehicle/vehicle-ambulance.png"
+          "src": "/assets/images/vehicle/vehicle-ambulance.png",
+          "isGet": false
         },
         {
           "itemNumber": 2,
           "name": "ぶるどーざー",
-          "src": "/assets/images/vehicle/vehicle-bulldozer.png"
+          "src": "/assets/images/vehicle/vehicle-bulldozer.png",
+          "isGet": false
         },
         {
           "itemNumber": 3,
           "name": "がーべーっじとらっく",
-          "src": "/assets/images/vehicle/vehicle-gabagetruck.png"
+          "src": "/assets/images/vehicle/vehicle-gabagetruck.png",
+          "isGet": false
         },
         {
           "itemNumber": 4,
           "name": "ぽりすかー",
-          "src": "/assets/images/vehicle/vehicle-policecar.png"
+          "src": "/assets/images/vehicle/vehicle-policecar.png",
+          "isGet": false
         }
       ]
     }

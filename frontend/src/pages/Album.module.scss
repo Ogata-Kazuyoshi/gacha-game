@@ -1,0 +1,80 @@
+.albumArea {
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 150px 0;
+
+  > div {
+    padding: 8px 8px 0;
+    overflow: auto;
+
+  .eachTitleArea{
+
+    > :nth-child(1) {
+      font-size: 30px;
+      font-family: Arial;
+      font-weight: bold;
+    }
+
+
+    > .eachCardArea{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      > div {
+        width: calc((100% - 40px)/3);
+        height: calc(((100vw - 40px)/3)*1.445);
+        position: relative;
+
+        > :nth-child(1) {
+         width: 100%;
+        }
+
+        > :nth-child(2) {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+
+          > div {
+            margin-top: 9%;
+          }
+        }
+
+        > :nth-child(3) {
+          position: absolute;
+          width: 100%;
+          height: 97%;
+          top: 0;
+          left: 0;
+          //background-color: rgba(29, 183, 255, 0.594);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          > div {
+            //background-color:  rgba(255, 29, 29, 0.594);
+            width: 72%;
+            height: 55%;
+
+            > img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+
+
+        }
+      }
+    }
+  }
+  }
+}

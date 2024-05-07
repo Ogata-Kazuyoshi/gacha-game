@@ -3,7 +3,6 @@ import styles from './Home.module.scss';
 // @ts-expect-error
 import useSound from 'use-sound';
 import Sound from '../../public/assets/sound/gatyagatya.mp3';
-import data from '../data/data.json';
 import gachaBody from '../../public/assets/images/common/gachaBody.png';
 import gachaHandole from '../../public/assets/images/common/gachaHandle.png';
 import {useContext, useState} from 'react';
@@ -13,23 +12,24 @@ import {ApplicationContext} from "../contexts/ApplicationContextProvider.tsx";
 
 export const Home = () => {
 
-  const {selectData} = useContext(ApplicationContext)!
+  const {selectData,dataList} = useContext(ApplicationContext)!
   const gacha = () => {
+    console.log({dataList})
     let firstIndex:number
     let secondIndex:number
     if (selectData[0] !== null && selectData[1] !==null ) {
       firstIndex = selectData[0]
       secondIndex = selectData[1]
     } else {
-      firstIndex = Math.floor(Math.random() * data.dataList.length);
+      firstIndex = Math.floor(Math.random() * dataList.length);
       secondIndex = Math.floor(
-          Math.random() * data.dataList[firstIndex].items.length
+          Math.random() * dataList[firstIndex].items.length
       );
     }
     const currentData = window.localStorage.getItem(
-      `gachaList-${data.dataList[firstIndex].titleNumber}`
+        `gachaList-${dataList[firstIndex].titleNumber}`
     );
-    let nextData = `${data.dataList[firstIndex].items[secondIndex].itemNumber}`;
+    let nextData = `${dataList[firstIndex].items[secondIndex].itemNumber}`;
     if (currentData) {
       const splitData = currentData.split('-');
       if (!splitData.includes(nextData)) {
@@ -43,8 +43,8 @@ export const Home = () => {
       }
     }
     window.localStorage.setItem(
-      `gachaList-${data.dataList[firstIndex].titleNumber}`,
-      nextData
+        `gachaList-${dataList[firstIndex].titleNumber}`,
+        nextData
     );
     setTitleIndex(firstIndex);
     setItemIndex(secondIndex);
@@ -75,27 +75,27 @@ export const Home = () => {
   }
 
   return (
-    <>
-      <div className={styles.homeContainer}>
-        <div>
-          <img src={gachaBody} alt="gachaBody" />
+      <>
+        <div className={styles.homeContainer}>
+          <div>
+            <img src={gachaBody} alt="gachaBody" />
             <TouchDown callBackFunc={handleButtonClick}>
-                  <img
-                    src={gachaHandole}
-                    alt="gachaHandle"
-                    className={rotate ? styles.rotateAnimation : ''}
-                  />
+              <img
+                  src={gachaHandole}
+                  alt="gachaHandle"
+                  className={rotate ? styles.rotateAnimation : ''}
+              />
             </TouchDown>
 
+          </div>
         </div>
-      </div>
-      {isPopUp && titleIndex !== null && itemIndex !== null && (
-        <PopUp
-          titleIndex={titleIndex}
-          itemIndex={itemIndex}
-          callBackFunc={backToHome}
-        />
-      )}
-    </>
+        {isPopUp && titleIndex !== null && itemIndex !== null && (
+            <PopUp
+                titleIndex={titleIndex}
+                itemIndex={itemIndex}
+                callBackFunc={backToHome}
+            />
+        )}
+      </>
   );
 };

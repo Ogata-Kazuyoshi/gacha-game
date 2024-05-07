@@ -1,10 +1,10 @@
 import styles from "./PopUp.module.scss"
-import data from "../data/data.json";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import {SwipeEvent} from "./SwipeEvent.tsx";
-import React from "react";
+import React, {useContext} from "react";
 import {TouchDown} from "./TouchDown.tsx";
 import card from "../../public/assets/images/common/card-template.png"
+import {ApplicationContext} from "../contexts/ApplicationContextProvider.tsx";
 
 type Props = {
     titleIndex:number,
@@ -13,6 +13,8 @@ type Props = {
 }
 
 export const PopUp:React.FC<Props> = (props) => {
+
+    const {dataList} = useContext(ApplicationContext)!
 
 
     return <div className={`${styles.popUpContainer} ${styles.slideInFromBottom}`}>
@@ -28,13 +30,13 @@ export const PopUp:React.FC<Props> = (props) => {
             <SwipeEvent callBackFunc={() => {
                 props.callBackFunc()
             }}>
-                <div>{`${data.dataList[props.titleIndex].title}`}</div>
+                <div>{`${dataList[props.titleIndex].title}`}</div>
                 <div>
                     <div>
-                        <img src={data.dataList[props.titleIndex].items[props.itemIndex].src} alt="#"/>
+                        <img src={dataList[props.titleIndex].items[props.itemIndex].src} alt="#"/>
                     </div>
                 </div>
-                <div>{`${data.dataList[props.titleIndex].items[props.itemIndex].name}`}</div>
+                <div>{`${dataList[props.titleIndex].items[props.itemIndex].name}`}</div>
             </SwipeEvent>
         </div>
     </div>
