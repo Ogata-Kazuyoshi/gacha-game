@@ -39,6 +39,18 @@
           "name": "ケント",
           "src": "/assets/images/pawpatrol/pawpatrol-kento.png",
           "isGet": false
+        },
+        {
+          "itemNumber": 7,
+          "name": "マーシャル",
+          "src": "/assets/images/pawpatrol/pawpatrol-merciel.png",
+          "isGet": false
+        },
+        {
+          "itemNumber": 8,
+          "name": "ケント",
+          "src": "/assets/images/pawpatrol/pawpatrol-zoomer.png",
+          "isGet": false
         }
       ]
     },
@@ -86,6 +98,30 @@
           "itemNumber": 4,
           "name": "ぽりすかー",
           "src": "/assets/images/vehicle/vehicle-policecar.png",
+          "isGet": false
+        }
+      ]
+    },
+    {
+      "title": "babyshark",
+      "titleNumber" : 4,
+      "items": [
+        {
+          "itemNumber": 1,
+          "name": "ベービーシャーク",
+          "src": "/assets/images/babyshark/babyshark-babyshark.png",
+          "isGet": false
+        },
+        {
+          "itemNumber": 2,
+          "name": "ダディシャーク",
+          "src": "/assets/images/babyshark/babyshark-dadyshark.png",
+          "isGet": false
+        },
+        {
+          "itemNumber": 3,
+          "name": "マミーシャーク",
+          "src": "/assets/images/babyshark/babyshark-momeyshark.png",
           "isGet": false
         }
       ]
