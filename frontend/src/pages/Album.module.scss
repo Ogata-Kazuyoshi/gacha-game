@@ -85,6 +85,20 @@
             }
           }
 
+          > .alreadyGot{
+            &::before {
+              content:"";
+              position: absolute;
+              top: calc(50% - 56px);
+              left: calc(50% - 56px);
+              width: 112px;
+              height: 112px;
+              background-image: url("../../public/assets/images/common/checkIn.svg") ;
+              background-repeat: no-repeat;
+              opacity: 0.7;
+            }
+          }
+
         }
 
       }

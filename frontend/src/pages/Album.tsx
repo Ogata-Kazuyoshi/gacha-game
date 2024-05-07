@@ -36,7 +36,7 @@ export const Album = () => {
                                 <div>{item.name}</div>
                             </div>
                             <div>
-                                <div className={`${item.isGet ? "" : styles.notHaveGot}`}>
+                                <div className={`${item.isGet ? styles.alreadyGot : styles.notHaveGot}`}>
                                     <img src={item.src} alt=""/>
                                 </div>
                             </div>
