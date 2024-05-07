@@ -14,7 +14,6 @@ export const Home = () => {
 
   const {selectData,dataList} = useContext(ApplicationContext)!
   const gacha = () => {
-    console.log({dataList})
     let firstIndex:number
     let secondIndex:number
     if (selectData[0] !== null && selectData[1] !==null ) {
@@ -46,6 +45,8 @@ export const Home = () => {
         `gachaList-${dataList[firstIndex].titleNumber}`,
         nextData
     );
+
+
     setTitleIndex(firstIndex);
     setItemIndex(secondIndex);
     setIsPopUp(true);

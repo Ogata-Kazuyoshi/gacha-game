@@ -33,7 +33,18 @@ export const ApplicationContextProvider: React.FC<Props> = ({ children }) => {
     const [dataList, setDataList] = useState<Title[]>(data.dataList)
 
     useEffect(() => {
-        setDataList(data.dataList)
+        const tempData = JSON.parse(JSON.stringify(dataList))
+        dataList.forEach((elm,index)=>{
+            const getLocalStorage = window.localStorage.getItem(`gachaList-${elm.titleNumber}`)
+            if (!getLocalStorage) return
+            const haveCard = getLocalStorage?.split("-")
+            haveCard?.forEach((itemNumber)=>{
+                const itemIndex = dataList[index].items.findIndex(elm2 => elm2.itemNumber === +itemNumber)
+                tempData[index].items[itemIndex].isGet = true
+            })
+        })
+        // console.log(tempData)
+        setDataList(tempData)
     }, []);
 
     return (
